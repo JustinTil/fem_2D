@@ -4,9 +4,12 @@
 
 void DrawLinearTriangle(Triangle_linear *tri, Vector2 originPosition, int scale)
 {
-    Vector2 p1 = Vector2Add(originPosition, Vector2Scale(FlipY(tri->n1), scale));
-    Vector2 p2 = Vector2Add(originPosition, Vector2Scale(FlipY(tri->n2), scale));
-    Vector2 p3 = Vector2Add(originPosition, Vector2Scale(FlipY(tri->n3), scale));
+
+    // Origin position is the position in raylib window (with Y+ down)
+
+    Vector2 p1 = Vector2Add(originPosition, Vector2Scale(FlipY(tri->n1.pos), scale));
+    Vector2 p2 = Vector2Add(originPosition, Vector2Scale(FlipY(tri->n2.pos), scale));
+    Vector2 p3 = Vector2Add(originPosition, Vector2Scale(FlipY(tri->n3.pos), scale));
 
     DrawLineEx(p1, p2, 1, BLACK);
     DrawLineEx(p2, p3, 1, BLACK);

@@ -3,11 +3,12 @@
 
 #include "triangle_linear.h"
 #include <raylib.h>
+
 typedef struct Mesh_triangle_linear {
     int n; // number of elements
     Triangle_linear *elementList;
 }Mesh_triangle_linear;
 
-void DrawMeshTriangleLinear(Mesh_triangle_linear mesh);
+void DrawMeshTriangleLinear(Mesh_triangle_linear *mesh, Vector2 originPosition, int scale);
 
 #endif
